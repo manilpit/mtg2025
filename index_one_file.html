@@ -1,0 +1,858 @@
+<!DOCTYPE html>
+<html lang="no">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Norgesmesterskapet i Magic: The Gathering 2025</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+            background-color: #0a0e1a;
+            color: #e0e6ed;
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .header {
+            padding: 60px 0 80px;
+            text-align: center;
+            background: linear-gradient(135deg, #0a0e1a 0%, #1a1f2e 50%, #2c3e50 100%);
+            position: relative;
+        }
+
+        .header::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="grid" width="10" height="10" patternUnits="userSpaceOnUse"><path d="M 10 0 L 0 0 0 10" fill="none" stroke="rgba(255,255,255,0.05)" stroke-width="0.5"/></pattern></defs><rect width="100" height="100" fill="url(%23grid)"/></svg>');
+            opacity: 0.3;
+        }
+
+        .logo {
+            font-size: 2.8em;
+            font-weight: 700;
+            color: #ffffff;
+            margin-bottom: 12px;
+            letter-spacing: -1px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .subtitle {
+            font-size: 1.2em;
+            color: #8892b0;
+            font-weight: 400;
+            margin-bottom: 20px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .year {
+            font-size: 4em;
+            font-weight: 100;
+            color: #64b5f6;
+            letter-spacing: 8px;
+            position: relative;
+            z-index: 1;
+            text-shadow: 0 0 30px rgba(100, 181, 246, 0.3);
+        }
+
+        .nav-section {
+            background-color: #1e2a3a;
+            border-bottom: 1px solid #34495e;
+            padding: 0;
+            margin-bottom: 60px;
+        }
+
+        .nav-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 60px;
+        }
+
+        .nav-title {
+            color: #64b5f6;
+            font-size: 1.1em;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .main-content {
+            padding: 0 0 80px;
+        }
+
+        .hero-card {
+            background: linear-gradient(135deg, #2c3e50 0%, #34495e 100%);
+            border: 1px solid #4a5568;
+            border-radius: 12px;
+            padding: 40px;
+            margin-bottom: 60px;
+            text-align: center;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+        }
+
+        .hero-title {
+            font-size: 1.8em;
+            font-weight: 600;
+            color: #ffffff;
+            margin-bottom: 16px;
+        }
+
+        .hero-description {
+            font-size: 1.1em;
+            color: #a0aec0;
+            max-width: 600px;
+            margin: 0 auto 30px;
+        }
+
+        .location-info {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            margin: 20px 0;
+        }
+
+        .location-item {
+            background: rgba(100, 181, 246, 0.1);
+            padding: 20px;
+            border-radius: 8px;
+            border: 1px solid rgba(100, 181, 246, 0.3);
+        }
+
+        .location-item h3 {
+            color: #64b5f6;
+            margin-bottom: 8px;
+            font-size: 1.1em;
+        }
+
+        .location-item p {
+            color: #a0aec0;
+        }
+
+        .events-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 24px;
+            margin-top: 40px;
+        }
+
+        .event-card {
+            background: #1a202c;
+            border: 1px solid #2d3748;
+            border-radius: 8px;
+            padding: 28px;
+            text-decoration: none;
+            color: inherit;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .event-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 3px;
+            background: linear-gradient(90deg, #64b5f6, #42a5f5);
+            transform: scaleX(0);
+            transition: transform 0.3s ease;
+        }
+
+        .event-card:hover::before {
+            transform: scaleX(1);
+        }
+
+        .event-card:hover {
+            border-color: #4a5568;
+            transform: translateY(-4px);
+            box-shadow: 0 12px 40px rgba(0, 0, 0, 0.4);
+        }
+
+        .event-type {
+            display: inline-block;
+            font-size: 0.8em;
+            color: #64b5f6;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 12px;
+            font-weight: 600;
+        }
+
+        .event-title {
+            font-size: 1.3em;
+            font-weight: 600;
+            color: #ffffff;
+            margin-bottom: 12px;
+            line-height: 1.3;
+        }
+
+        .event-description {
+            color: #a0aec0;
+            font-size: 0.95em;
+            line-height: 1.5;
+        }
+
+        .main-event .event-type {
+            color: #f56565;
+        }
+
+        .main-event::before {
+            background: linear-gradient(90deg, #f56565, #e53e3e);
+        }
+
+        .side-event .event-type {
+            color: #68d391;
+        }
+
+        .side-event::before {
+            background: linear-gradient(90deg, #68d391, #48bb78);
+        }
+
+        .qualifier .event-type {
+            color: #fbb6ce;
+        }
+
+        .qualifier::before {
+            background: linear-gradient(90deg, #fbb6ce, #ed64a6);
+        }
+
+        .day-section {
+            margin: 60px 0;
+        }
+
+        .day-header {
+            background: linear-gradient(135deg, #1a202c 0%, #2d3748 100%);
+            border: 1px solid #4a5568;
+            border-radius: 12px 12px 0 0;
+            padding: 30px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .day-header::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 3px;
+            background: linear-gradient(90deg, #64b5f6, #42a5f5);
+        }
+
+        .day-title {
+            font-size: 2em;
+            color: #ffffff;
+            margin-bottom: 8px;
+            font-weight: 600;
+        }
+
+        .day-date {
+            font-size: 1.1em;
+            color: #64b5f6;
+            font-weight: 500;
+        }
+
+        .events-container {
+            background: #1a202c;
+            border: 1px solid #2d3748;
+            border-top: none;
+            border-radius: 0 0 12px 12px;
+            padding: 0;
+        }
+
+        .tournament-card {
+            border-bottom: 1px solid #2d3748;
+            padding: 30px;
+            transition: all 0.3s ease;
+            position: relative;
+        }
+
+        .tournament-card:last-child {
+            border-bottom: none;
+        }
+
+        .tournament-card:hover {
+            background: rgba(100, 181, 246, 0.05);
+        }
+
+        .tournament-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: 15px;
+            flex-wrap: wrap;
+            gap: 15px;
+        }
+
+        .tournament-time {
+            background: #64b5f6;
+            color: #0a0e1a;
+            padding: 8px 16px;
+            border-radius: 20px;
+            font-weight: 600;
+            font-size: 0.9em;
+            white-space: nowrap;
+        }
+
+        .tournament-title {
+            font-size: 1.4em;
+            color: #ffffff;
+            font-weight: 600;
+            flex: 1;
+            min-width: 200px;
+        }
+
+        .tournament-details {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            margin-top: 20px;
+        }
+
+        .detail-item {
+            background: rgba(45, 55, 72, 0.5);
+            padding: 15px;
+            border-radius: 8px;
+            border-left: 3px solid #64b5f6;
+        }
+
+        .detail-label {
+            color: #a0aec0;
+            font-size: 0.85em;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 5px;
+            font-weight: 600;
+        }
+
+        .detail-value {
+            color: #ffffff;
+            font-size: 1.1em;
+            font-weight: 500;
+        }
+
+        .main-event-tournament {
+            background: linear-gradient(135deg, rgba(245, 101, 101, 0.1) 0%, rgba(229, 62, 62, 0.1) 100%);
+        }
+
+        .main-event-tournament .tournament-time {
+            background: #f56565;
+        }
+
+        .main-event-tournament .detail-item {
+            border-left-color: #f56565;
+        }
+
+        .special-event-tournament {
+            background: linear-gradient(135deg, rgba(104, 211, 145, 0.1) 0%, rgba(72, 187, 120, 0.1) 100%);
+        }
+
+        .special-event-tournament .tournament-time {
+            background: #68d391;
+        }
+
+        .special-event-tournament .detail-item {
+            border-left-color: #68d391;
+        }
+
+        .qualifier-event-tournament {
+            background: linear-gradient(135deg, rgba(251, 182, 206, 0.1) 0%, rgba(237, 100, 166, 0.1) 100%);
+        }
+
+        .qualifier-event-tournament .tournament-time {
+            background: #ed64a6;
+        }
+
+        .qualifier-event-tournament .detail-item {
+            border-left-color: #ed64a6;
+        }
+
+        .footer {
+            background-color: #1a202c;
+            border-top: 1px solid #2d3748;
+            padding: 40px 0;
+            text-align: center;
+            margin-top: 60px;
+        }
+
+        .footer-content {
+            color: #718096;
+            font-size: 0.9em;
+        }
+
+        .footer-brand {
+            color: #64b5f6;
+            font-weight: 600;
+            margin-bottom: 8px;
+        }
+
+        .discord-link {
+            display: inline-block;
+            background: #5865f2;
+            color: white;
+            padding: 12px 24px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 600;
+            margin: 20px 0;
+            transition: all 0.3s ease;
+        }
+
+        .discord-link:hover {
+            background: #4752c4;
+            transform: translateY(-2px);
+        }
+
+        @media (max-width: 768px) {
+            .logo {
+                font-size: 2.2em;
+            }
+            
+            .year {
+                font-size: 2.8em;
+                letter-spacing: 4px;
+            }
+            
+            .hero-card {
+                padding: 28px 20px;
+            }
+            
+            .hero-title {
+                font-size: 1.5em;
+            }
+            
+            .events-grid {
+                grid-template-columns: 1fr;
+                gap: 20px;
+            }
+            
+            .event-card {
+                padding: 24px 20px;
+            }
+
+            .day-header {
+                padding: 20px;
+            }
+            
+            .day-title {
+                font-size: 1.6em;
+            }
+            
+            .tournament-card {
+                padding: 20px;
+            }
+            
+            .tournament-header {
+                flex-direction: column;
+                align-items: stretch;
+            }
+            
+            .tournament-time {
+                text-align: center;
+                align-self: flex-start;
+            }
+            
+            .tournament-details {
+                grid-template-columns: 1fr;
+                gap: 15px;
+            }
+            
+            .location-info {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .container {
+                padding: 0 15px;
+            }
+            
+            .hero-card {
+                padding: 24px 16px;
+            }
+
+            .tournament-card {
+                padding: 16px;
+            }
+            
+            .detail-item {
+                padding: 12px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <div class="container">
+            <h1 class="logo">Norgesmesterskapet i Magic the Gathering</h1>
+            <p class="subtitle"></p>
+            <div class="year">2025</div>
+        </div>
+    </header>
+
+    <div class="nav-section">
+        <div class="container">
+            <div class="nav-container">
+                <div class="nav-title">Komplett oversikt - 8-10 august 2025</div>
+            </div>
+        </div>
+    </div>
+
+    <main class="main-content">
+        <div class="container">
+            <div class="hero-card">
+                <h2 class="hero-title">3 dager med Magic the Gathering</h2>
+                <p class="hero-description">
+                    Norges største Magic-turnering arrangeres 8-10 august 2025. Se komplett program nedenfor og finn lenker til påmelding og mer informasjon.
+                </p>
+                <a href="https://discord.com/invite/7UtayJsGBB" target="_blank" class="discord-link">
+                    Join Magic the Gathering - Norge Discord Server!
+                </a>
+                <div class="location-info">
+                    <div class="location-item">
+                        <h3>Lokasjon</h3>
+                        <p>Pilestredet 52 - Studenthuset<br>OsloMet</p>
+                    </div>
+                    <div class="location-item">
+                        <h3>Beliggenhet</h3>
+                        <p>10 minutter fra Slottet</p>
+                    </div>
+                    <div class="location-item">
+                        <h3>Dato</h3>
+                        <p>8-10 august 2025</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="events-grid">
+                <a href="https://imgur.com/a/apes5eP" target="_blank" class="event-card">
+                    <div class="event-type">Informasjon</div>
+                    <div class="event-title">Infografikk NM 2025</div>
+                    <div class="event-description">
+                        Komplett oversikt over turneringsoppsett, tidsplan og alle viktige detaljer for deltakere
+                    </div>
+                </a>
+
+                <a href="https://docs.google.com/forms/d/e/1FAIpQLSdqlV7v3LPZOpoGjdE100obv9cAOf7dB1iaoQLjvfCRtDW1VA/viewform" target="_blank" class="event-card main-event">
+                    <div class="event-type">Hovedturnering</div>
+                    <div class="event-title">Main Event - Standard</div>
+                    <div class="event-description">
+                        Norgesmesterskapet i Standard format. Turneringens hovedarrangement med Norges beste spillere
+                    </div>
+                </a>
+
+                <a href="https://docs.google.com/forms/d/e/1FAIpQLSeFGEOs0fL5MOPBhYjPsx4fHo5l76SSe7fbyHGy1O6IWp5M6Q/viewform" target="_blank" class="event-card side-event">
+                    <div class="event-type">Grand Challenge</div>
+                    <div class="event-title">Modern Grand Challenge 64</div>
+                    <div class="event-description">
+                        Eksklusiv Modern-turnering begrenset til 64 deltakere. Høyt konkurransenivå og attraktive premier
+                    </div>
+                </a>
+
+                <a href="https://docs.google.com/forms/d/e/1FAIpQLScajV7m_s5mkItSUH5pLh06EaB_uQKYl7-4ap2fShj5rzUE7Q/viewform" target="_blank" class="event-card side-event">
+                    <div class="event-type">Fredag Event</div>
+                    <div class="event-title">Chaos Draft</div>
+                    <div class="event-description">
+                        Avslappet og morsom draft-turnering på fredag kveld. Perfekt start på turneringshelgen
+                    </div>
+                </a>
+
+                <a href="https://docs.google.com/forms/d/e/1FAIpQLSdYRIl-WnBKM990ypvdVhlVmVzWPtNWMBq5bRkVTY82C_J4Kg/viewform" target="_blank" class="event-card qualifier">
+                    <div class="event-type">Kvalifisering</div>
+                    <div class="event-title">Last Chance Bye-Turnering</div>
+                    <div class="event-description">
+                        Siste sjanse til å vinne bye til hovedturneringen! Standard format med bye til de ubeseiret
+                    </div>
+                </a>
+
+                <a href="https://discord.com/invite/7UtayJsGBB" target="_blank" class="event-card">
+                    <div class="event-type">Praktisk</div>
+                    <div class="event-title">Praktisk informasjon</div>
+                    <div class="event-description">
+                        Reise, overnatting, mat og andre praktiske detaljer for turneringshelgen
+                    </div>
+                </a>
+            </div>
+
+            <!-- Fredag 8. august -->
+            <section class="day-section">
+                <div class="day-header">
+                    <h2 class="day-title">Fredag</h2>
+                    <p class="day-date">8. august 2025</p>
+                </div>
+                <div class="events-container">
+                    <div class="tournament-card qualifier-event-tournament">
+                        <div class="tournament-header">
+                            <h3 class="tournament-title">Last Chance Bye-Turnering - Standard</h3>
+                            <div class="tournament-time">16:30</div>
+                        </div>
+                        <div class="tournament-details">
+                            <div class="detail-item">
+                                <div class="detail-label">Antall deltagere</div>
+                                <div class="detail-value">32</div>
+                            </div>
+                            <div class="detail-item">
+                                <div class="detail-label">Pris</div>
+                                <div class="detail-value">250kr</div>
+                            </div>
+                            <div class="detail-item">
+                                <div class="detail-label">Tid</div>
+                                <div class="detail-value">4 runder</div>
+                            </div>
+                            <div class="detail-item">
+                                <div class="detail-label">Premiering</div>
+                                <div class="detail-value">Billett+Bye(4-0) Extra prizes</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="tournament-card special-event-tournament">
+                        <div class="tournament-header">
+                            <h3 class="tournament-title">Norges største chaos draft!</h3>
+                            <div class="tournament-time">17:00</div>
+                        </div>
+                        <div class="tournament-details">
+                            <div class="detail-item">
+                                <div class="detail-label">Antall deltagere</div>
+                                <div class="detail-value">128</div>
+                            </div>
+                            <div class="detail-item">
+                                <div class="detail-label">Pris</div>
+                                <div class="detail-value">320kr</div>
+                            </div>
+                            <div class="detail-item">
+                                <div class="detail-label">Tid</div>
+                                <div class="detail-value">50min draft, 3 runder</div>
+                            </div>
+                            <div class="detail-item">
+                                <div class="detail-label">Premiering</div>
+                                <div class="detail-value">Pack per Win</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Lørdag 9. august -->
+            <section class="day-section">
+                <div class="day-header">
+                    <h2 class="day-title">Lørdag</h2>
+                    <p class="day-date">9. august 2025</p>
+                </div>
+                <div class="events-container">
+                    <div class="tournament-card main-event-tournament">
+                        <div class="tournament-header">
+                            <h3 class="tournament-title">Main Event - Norgesmesterskapet i Standard!</h3>
+                            <div class="tournament-time">09:00</div>
+                        </div>
+                        <div class="tournament-details">
+                            <div class="detail-item">
+                                <div class="detail-label">Antall deltagere</div>
+                                <div class="detail-value">128</div>
+                            </div>
+                            <div class="detail-item">
+                                <div class="detail-label">Pris</div>
+                                <div class="detail-value">600kr (550kr for OMF medlemmer)</div>
+                            </div>
+                            <div class="detail-item">
+                                <div class="detail-label">Runder</div>
+                                <div class="detail-value">Swiss + Topp 8</div>
+                            </div>
+                            <div class="detail-item">
+                                <div class="detail-label">Premiering</div>
+                                <div class="detail-value">10 000kr ekstra fra OMF + vanlige premier</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="tournament-card">
+                        <div class="tournament-header">
+                            <h3 class="tournament-title">Diverse draft - gjennom dagen</h3>
+                            <div class="tournament-time">Løpende</div>
+                        </div>
+                        <div class="tournament-details">
+                            <div class="detail-item">
+                                <div class="detail-label">Deltagere</div>
+                                <div class="detail-value">Opp til 64</div>
+                            </div>
+                            <div class="detail-item">
+                                <div class="detail-label">Pris</div>
+                                <div class="detail-value">300kr</div>
+                            </div>
+                            <div class="detail-item">
+                                <div class="detail-label">Tid</div>
+                                <div class="detail-value">50min draft, 3 runder</div>
+                            </div>
+                            <div class="detail-item">
+                                <div class="detail-label">Premiering</div>
+                                <div class="detail-value">Pack per win</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Søndag 10. august -->
+            <section class="day-section">
+                <div class="day-header">
+                    <h2 class="day-title">Søndag</h2>
+                    <p class="day-date">10. august 2025</p>
+                </div>
+                <div class="events-container">
+                    <div class="tournament-card special-event-tournament">
+                        <div class="tournament-header">
+                            <h3 class="tournament-title">Modern Grand Challenge 64</h3>
+                            <div class="tournament-time">09:30</div>
+                        </div>
+                        <div class="tournament-details">
+                            <div class="detail-item">
+                                <div class="detail-label">Antall deltagere</div>
+                                <div class="detail-value">64</div>
+                            </div>
+                            <div class="detail-item">
+                                <div class="detail-label">Pris</div>
+                                <div class="detail-value">400kr</div>
+                            </div>
+                            <div class="detail-item">
+                                <div class="detail-label">Tid</div>
+                                <div class="detail-value">1 dag, topp 8/4/2 avhengig av tid</div>
+                            </div>
+                            <div class="detail-item">
+                                <div class="detail-label">Premiering</div>
+                                <div class="detail-value">Premier utgår fra antall deltagere</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="tournament-card main-event-tournament">
+                        <div class="tournament-header">
+                            <h3 class="tournament-title">Main Event - NM i Standard - Topp 8</h3>
+                            <div class="tournament-time">10:00</div>
+                        </div>
+                        <div class="tournament-details">
+                            <div class="detail-item">
+                                <div class="detail-label">Format</div>
+                                <div class="detail-value">Sluttspill for topp 8</div>
+                            </div>
+                            <div class="detail-item">
+                                <div class="detail-label">Premier</div>
+                                <div class="detail-value">Store premier</div>
+                            </div>
+                            <div class="detail-item">
+                                <div class="detail-label">Vinner</div>
+                                <div class="detail-value">1. plass blir Norgesmester 2025</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="tournament-card">
+                        <div class="tournament-header">
+                            <h3 class="tournament-title">Diverse draft</h3>
+                            <div class="tournament-time">Løpende</div>
+                        </div>
+                        <div class="tournament-details">
+                            <div class="detail-item">
+                                <div class="detail-label">Info</div>
+                                <div class="detail-value">Samme som lørdag</div>
+                            </div>
+                            <div class="detail-item">
+                                <div class="detail-label">Pris</div>
+                                <div class="detail-value">300kr</div>
+                            </div>
+                            <div class="detail-item">
+                                <div class="detail-label">Premiering</div>
+                                <div class="detail-value">Pack per win</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">Norgesmesterskapet i Magic: The Gathering 2025</div>
+                <div>Pilestredet 52 - Studenthuset, OsloMet • 8-10 august 2025</div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Smooth entrance animation
+            const cards = document.querySelectorAll('.event-card');
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach((entry, index) => {
+                    if (entry.isIntersecting) {
+                        setTimeout(() => {
+                            entry.target.style.opacity = '1';
+                            entry.target.style.transform = 'translateY(0)';
+                        }, index * 100);
+                    }
+                });
+            }, { threshold: 0.1 });
+
+            cards.forEach(card => {
+                card.style.opacity = '0';
+                card.style.transform = 'translateY(30px)';
+                card.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+                observer.observe(card);
+            });
+
+            // Hero card animation
+            const heroCard = document.querySelector('.hero-card');
+            heroCard.style.opacity = '0';
+            heroCard.style.transform = 'translateY(20px)';
+            
+            setTimeout(() => {
+                heroCard.style.transition = 'opacity 0.8s ease, transform 0.8s ease';
+                heroCard.style.opacity = '1';
+                heroCard.style.transform = 'translateY(0)';
+            }, 300);
+
+            // Day section animations
+            const sections = document.querySelectorAll('.day-section');
+            sections.forEach(section => {
+                section.style.opacity = '0';
+                section.style.transform = 'translateY(30px)';
+                section.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+                observer.observe(section);
+            });
+
+            // Tournament card hover effects
+            const tournamentCards = document.querySelectorAll('.tournament-card');
+            tournamentCards.forEach(card => {
+                card.addEventListener('mouseenter', function() {
+                    this.style.transform = 'translateX(5px)';
+                });
+                
+                card.addEventListener('mouseleave', function() {
+                    this.style.transform = 'translateX(0)';
+                });
+            });
+        });
+    </script>
+</body>
+</html>
