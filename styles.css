@@ -1,55 +1,39 @@
 .success-notice {
-    background: linear-gradient(135deg, #1a202c 0%, #2d3748 100%);
-    border-bottom: 1px solid #4a5568;
-    padding: 40px 0;
+    background: linear-gradient(135deg, #2c3e50 0%, #34495e 100%);
+    border: 1px solid #4a5568;
+    border-radius: 12px;
+    padding: 40px;
+    margin-bottom: 60px;
     text-align: center;
-    position: relative;
-    overflow: hidden;
-}
-
-.success-notice::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    height: 3px;
-    background: linear-gradient(90deg, #68d391, #48bb78);
-}
-
-.notice-header {
-    margin-bottom: 30px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
 }
 
 .notice-header h2 {
     font-size: 1.8em;
     font-weight: 600;
     color: #68d391;
-    margin-bottom: 12px;
-    letter-spacing: -0.5px;
+    margin-bottom: 16px;
 }
 
 .notice-header p {
     font-size: 1.1em;
     color: #a0aec0;
-    margin: 0;
+    margin-bottom: 30px;
 }
 
 .notice-content {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 20px;
+    color: #a0aec0;
+    font-size: 1em;
+    line-height: 1.6;
     margin-bottom: 30px;
 }
 
 .notice-section {
-    background: rgba(104, 211, 145, 0.1);
-    border: 1px solid rgba(104, 211, 145, 0.3);
-    border-radius: 8px;
-    padding: 20px;
-    font-size: 0.9em;
-    line-height: 1.5;
-    text-align: center;
+    margin-bottom: 20px;
+}
+
+.notice-section:last-child {
+    margin-bottom: 0;
 }
 
 .notice-section strong {
@@ -69,18 +53,29 @@
 }
 
 .notice-footer {
-    font-size: 1.1em;
     color: #68d391;
+    font-size: 1.1em;
     font-weight: 500;
 }
 
-.notice-footer em {
-    font-style: italic;
+.notice-footer p {
+    margin: 8px 0;
+}
+
+.notice-footer a {
+    color: #64b5f6;
+    text-decoration: none;
+    border-bottom: 1px solid transparent;
+    transition: border-color 0.3s ease;
+}
+
+.notice-footer a:hover {
+    border-bottom-color: #64b5f6;
 }
 
 @media (max-width: 768px) {
     .success-notice {
-        padding: 30px 0;
+        padding: 28px 20px;
     }
     
     .notice-header h2 {
@@ -92,27 +87,20 @@
     }
     
     .notice-content {
-        grid-template-columns: 1fr;
-        gap: 16px;
-        margin-bottom: 24px;
-    }
-    
-    .notice-section {
-        padding: 16px;
-        font-size: 0.85em;
+        font-size: 0.9em;
     }
 }
 
 @media (max-width: 480px) {
     .success-notice {
-        padding: 24px 0;
+        padding: 24px 16px;
     }
     
     .notice-header h2 {
         font-size: 1.3em;
     }
     
-    .notice-section {
-        padding: 14px;
+    .notice-content {
+        font-size: 0.85em;
     }
 }
