@@ -4,311 +4,255 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Norgesmesterskapet i Magic: The Gathering 2025</title>
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
 </head>
 <body>
+    <!-- HEADER & NAVIGATION -->
     <header class="header">
         <div class="container">
-            <div class="logo-container">
-                <!-- Erstatt med riktig sti til logobildet -->
-                <img src="logo.png" alt="NM i Magic the Gathering Logo" class="logo-image">
-                
-                <h1 class="logo">Norgesmesterskapet i Magic the Gathering</h1>
+            <div class="header-content">
+                <div class="header-left">
+                    <a href="index.html">
+                        <img src="assets/logomtgnm.png" alt="NM i Magic Logo" class="logo-small">
+                    </a>
+                    <div class="header-title">
+                        <h1>NM Magic 2025</h1>
+                        <p>Norgesmesterskapet i Magic: The Gathering</p>
+                    </div>
+                </div>
+                <button class="menu-toggle" id="menuToggle">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+                <nav class="nav-menu" id="navMenu">
+                    <a href="index.html" class="active">Hjem</a>
+                    <a href="side-events.html">Side Events</a>
+                    <a href="praktisk-info.html">Praktisk Info</a>
+                    <a href="vendors.html">Vendors</a>
+                    <a href="bye-tournament.html">BYE-Turnering</a>
+                    <a href="https://discord.com/invite/7UtayJsGBB" target="_blank" class="btn btn-discord">Discord</a>
+                </nav>
             </div>
-            <p class="subtitle"></p>
-            <div class="year">2025</div>
         </div>
     </header>
 
-    <div class="nav-section">
-        <div class="container">
-            <div class="nav-container">
-                <div class="nav-title">Komplett oversikt - 8-10 august 2025</div>
-            </div>
-        </div>
-    </div>
-
+    <!-- MAIN CONTENT -->
     <main class="main-content">
-        <div class="container">
-            <div class="hero-card">
-                <h2 class="hero-title">3 dager med Magic the Gathering</h2>
-                <p class="hero-description">
-                    Norges største Magic-turnering arrangeres 8-10 august 2025. Se komplett program nedenfor og finn lenker til påmelding og mer informasjon.
-                </p>
-                <a href="https://discord.com/invite/7UtayJsGBB" target="_blank" class="discord-link">
-                    Join Magic the Gathering - Norge Discord Server!
-                </a>
-                <div class="location-info">
-                    <div class="location-item">
+        <!-- HERO SECTION -->
+        <section class="hero-section page-section">
+            <div class="container">
+                <div class="hero-content">
+                    <h1>Norgesmesterskapet i Magic: The Gathering</h1>
+                    <p>Norges største Magic-turnering 8-10 august 2025. Slåss om tittelen som Norgesmester!</p>
+                    <div class="hero-buttons">
+                        <a href="side-events.html" class="btn btn-primary">Alle Events</a>
+                        <a href="#main-event" class="btn btn-secondary">Les mer</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- COUNTDOWN TIMER -->
+        <section class="page-section">
+            <div class="container">
+                <div class="countdown-container">
+                    <div class="countdown-title">Nedtelling til Hovedturneringen</div>
+                    <div class="countdown-timer" id="countdownTimer">
+                        <div class="countdown-item">
+                            <div class="countdown-number" id="days">00</div>
+                            <div class="countdown-label">Dager</div>
+                        </div>
+                        <div class="countdown-item">
+                            <div class="countdown-number" id="hours">00</div>
+                            <div class="countdown-label">Timer</div>
+                        </div>
+                        <div class="countdown-item">
+                            <div class="countdown-number" id="minutes">00</div>
+                            <div class="countdown-label">Minutter</div>
+                        </div>
+                        <div class="countdown-item">
+                            <div class="countdown-number" id="seconds">00</div>
+                            <div class="countdown-label">Sekunder</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- INFO CARDS -->
+        <section class="page-section">
+            <div class="container">
+                <div class="section-header">
+                    <h2>Om NM 2025</h2>
+                    <p>Alt du trenger å vite om Norgesmesterskapet</p>
+                </div>
+                <div class="info-cards">
+                    <div class="info-card">
+                        <div class="info-card-icon">📍</div>
                         <h3>Lokasjon</h3>
-                        <p>Pilestredet 52 - Studenthuset<br>OsloMet</p>
+                        <p>Pilestredet 52 - Studenthuset, OsloMet</p>
                     </div>
-                    <div class="location-item">
-                        <h3>Beliggenhet</h3>
-                        <p>10 minutter fra Slottet</p>
-                    </div>
-                    <div class="location-item">
+                    <div class="info-card">
+                        <div class="info-card-icon">📅</div>
                         <h3>Dato</h3>
                         <p>8-10 august 2025</p>
                     </div>
+                    <div class="info-card">
+                        <div class="info-card-icon">🎮</div>
+                        <h3>Deltagere</h3>
+                        <p>128 i hovedturneringen</p>
+                    </div>
+                    <div class="info-card">
+                        <div class="info-card-icon">🏆</div>
+                        <h3>Premier</h3>
+                        <p>Store premier + 10 000kr fra OMF</p>
+                    </div>
                 </div>
             </div>
+        </section>
 
-            <div class="events-grid">
-                <a href="https://imgur.com/a/apes5eP" target="_blank" class="event-card">
-                    <div class="event-type">Informasjon</div>
-                    <div class="event-title">Infografikk NM 2025</div>
-                    <div class="event-description">
-                        Komplett oversikt over turneringsoppsett, tidsplan og alle viktige detaljer for deltakere
+        <!-- MAIN EVENT INFO -->
+        <section class="page-section" id="main-event">
+            <div class="container">
+                <div class="main-event-info">
+                    <h2>🎯 Norgesmesterskapet i Standard</h2>
+                    <p style="color: var(--text-muted); margin-bottom: 20px;">
+                        Hovedturneringen arrangeres lørdag 9. august 2025. Dette er Norges viktigste Magic-turnering der Norges beste spillere konkurrerer om å bli Norgesmester 2025.
+                    </p>
+                    <div class="event-details-grid">
+                        <div class="detail-box">
+                            <div class="detail-label">Dato & Tid</div>
+                            <div class="detail-value">9. august, 09:00</div>
+                        </div>
+                        <div class="detail-box">
+                            <div class="detail-label">Format</div>
+                            <div class="detail-value">Standard</div>
+                        </div>
+                        <div class="detail-box">
+                            <div class="detail-label">Deltakere</div>
+                            <div class="detail-value">128</div>
+                        </div>
+                        <div class="detail-box">
+                            <div class="detail-label">Påmeldingspris</div>
+                            <div class="detail-value">600 kr (550 OMF)</div>
+                        </div>
                     </div>
-                </a>
-
-                <a href="https://docs.google.com/forms/d/e/1FAIpQLSdqlV7v3LPZOpoGjdE100obv9cAOf7dB1iaoQLjvfCRtDW1VA/viewform" target="_blank" class="event-card main-event">
-                    <div class="event-type">Hovedturnering</div>
-                    <div class="event-title">Main Event - Standard</div>
-                    <div class="event-description">
-                        Norgesmesterskapet i Standard format. Turneringens hovedarrangement med Norges beste spillere
+                    <div style="margin-top: 30px;">
+                        <a href="https://docs.google.com/forms/d/e/1FAIpQLSdqlV7v3LPZOpoGjdE100obv9cAOf7dB1iaoQLjvfCRtDW1VA/viewform" target="_blank" class="btn btn-primary">Påmelding Main Event</a>
                     </div>
-                </a>
-
-                <a href="https://docs.google.com/forms/d/e/1FAIpQLSeFGEOs0fL5MOPBhYjPsx4fHo5l76SSe7fbyHGy1O6IWp5M6Q/viewform" target="_blank" class="event-card side-event">
-                    <div class="event-type">Grand Challenge</div>
-                    <div class="event-title">Modern Grand Challenge 64</div>
-                    <div class="event-description">
-                        Eksklusiv Modern-turnering begrenset til 64 deltakere. Høyt konkurransenivå og attraktive premier
-                    </div>
-                </a>
-
-                <a href="https://docs.google.com/forms/d/e/1FAIpQLScajV7m_s5mkItSUH5pLh06EaB_uQKYl7-4ap2fShj5rzUE7Q/viewform" target="_blank" class="event-card side-event">
-                    <div class="event-type">Fredag Event</div>
-                    <div class="event-title">Chaos Draft</div>
-                    <div class="event-description">
-                        Avslappet og morsom draft-turnering på fredag kveld. Perfekt start på turneringshelgen
-                    </div>
-                </a>
-
-                <a href="https://docs.google.com/forms/d/e/1FAIpQLSdYRIl-WnBKM990ypvdVhlVmVzWPtNWMBq5bRkVTY82C_J4Kg/viewform" target="_blank" class="event-card qualifier">
-                    <div class="event-type">Kvalifisering</div>
-                    <div class="event-title">Last Chance Bye-Turnering</div>
-                    <div class="event-description">
-                        Siste sjanse til å vinne bye til hovedturneringen! Standard format med bye til de ubeseiret
-                    </div>
-                </a>
-
-                <a href="https://discord.com/invite/7UtayJsGBB" target="_blank" class="event-card">
-                    <div class="event-type">Praktisk</div>
-                    <div class="event-title">Praktisk informasjon</div>
-                    <div class="event-description">
-                        Reise, overnatting, mat og andre praktiske detaljer for turneringshelgen
-                    </div>
-                </a>
+                </div>
             </div>
+        </section>
 
-            <!-- Fredag 8. august -->
-            <section class="day-section">
-                <div class="day-header">
-                    <h2 class="day-title">Fredag</h2>
-                    <p class="day-date">8. august 2025</p>
+        <!-- MAP SECTION -->
+        <section class="page-section">
+            <div class="container">
+                <div class="map-header">
+                    <h2>Hvor finner vi Studenthuset?</h2>
+                    <p>Pilestredet 52, 0169 Oslo - 10 minutter fra Oslo Slott</p>
                 </div>
-                <div class="events-container">
-                    <div class="tournament-card qualifier-event-tournament">
-                        <div class="tournament-header">
-                            <h3 class="tournament-title">Last Chance Bye-Turnering - Standard</h3>
-                            <div class="tournament-time">16:30</div>
-                        </div>
-                        <div class="tournament-details">
-                            <div class="detail-item">
-                                <div class="detail-label">Antall deltagere</div>
-                                <div class="detail-value">32</div>
-                            </div>
-                            <div class="detail-item">
-                                <div class="detail-label">Pris</div>
-                                <div class="detail-value">250kr</div>
-                            </div>
-                            <div class="detail-item">
-                                <div class="detail-label">Tid</div>
-                                <div class="detail-value">4 runder</div>
-                            </div>
-                            <div class="detail-item">
-                                <div class="detail-label">Premiering</div>
-                                <div class="detail-value">Billett+Bye(4-0) Extra prizes</div>
-                            </div>
-                        </div>
+                <div class="map-container">
+                    <div id="map"></div>
+                </div>
+                <div class="location-details">
+                    <div class="location-detail">
+                        <h3>📍 Adresse</h3>
+                        <p>Pilestredet 52<br>Studenthuset, OsloMet<br>0169 Oslo</p>
                     </div>
-
-                    <div class="tournament-card special-event-tournament">
-                        <div class="tournament-header">
-                            <h3 class="tournament-title">Norges største chaos draft!</h3>
-                            <div class="tournament-time">17:00</div>
-                        </div>
-                        <div class="tournament-details">
-                            <div class="detail-item">
-                                <div class="detail-label">Antall deltagere</div>
-                                <div class="detail-value">128</div>
-                            </div>
-                            <div class="detail-item">
-                                <div class="detail-label">Pris</div>
-                                <div class="detail-value">320kr</div>
-                            </div>
-                            <div class="detail-item">
-                                <div class="detail-label">Tid</div>
-                                <div class="detail-value">50min draft, 3 runder</div>
-                            </div>
-                            <div class="detail-item">
-                                <div class="detail-label">Premiering</div>
-                                <div class="detail-value">Pack per Win</div>
-                            </div>
-                        </div>
+                    <div class="location-detail">
+                        <h3>🚇 Kollektivtransport</h3>
+                        <p>T-banen: Hausmanns gate stasjon<br>Buss: Linjer 20, 21 og 32<br>~10 min gange fra Slottet</p>
+                    </div>
+                    <div class="location-detail">
+                        <h3>🅿️ Parkering</h3>
+                        <p>Parkering tilgjengelig på området<br>Innmarka og Ferner parkeringshus i nærheten</p>
                     </div>
                 </div>
-            </section>
+            </div>
+        </section>
 
-            <!-- Lørdag 9. august -->
-            <section class="day-section">
-                <div class="day-header">
-                    <h2 class="day-title">Lørdag</h2>
-                    <p class="day-date">9. august 2025</p>
+        <!-- EVENTS PREVIEW -->
+        <section class="page-section events-preview">
+            <div class="container">
+                <div class="section-header">
+                    <h2>Alt som skjer i helgen</h2>
+                    <p>Hovedturneringen, side events og mere</p>
                 </div>
-                <div class="events-container">
-                    <div class="tournament-card main-event-tournament">
-                        <div class="tournament-header">
-                            <h3 class="tournament-title">Main Event - Norgesmesterskapet i Standard!</h3>
-                            <div class="tournament-time">09:00</div>
+                <div class="events-grid">
+                    <a href="side-events.html" class="event-card main-event">
+                        <div class="event-type">Hovedevent</div>
+                        <div class="event-title">Norgesmesterskapet - Standard</div>
+                        <div class="event-description">
+                            Lørdag 9. august 09:00. Slåss om tittelen som Norgesmester 2025 i Standard format. 128 deltakere, Swiss + Top 8.
                         </div>
-                        <div class="tournament-details">
-                            <div class="detail-item">
-                                <div class="detail-label">Antall deltagere</div>
-                                <div class="detail-value">128</div>
-                            </div>
-                            <div class="detail-item">
-                                <div class="detail-label">Pris</div>
-                                <div class="detail-value">600kr (550kr for OMF medlemmer)</div>
-                            </div>
-                            <div class="detail-item">
-                                <div class="detail-label">Runder</div>
-                                <div class="detail-value">Swiss + Topp 8</div>
-                            </div>
-                            <div class="detail-item">
-                                <div class="detail-label">Premiering</div>
-                                <div class="detail-value">10 000kr ekstra fra OMF + vanlige premier</div>
-                            </div>
-                        </div>
-                    </div>
+                    </a>
 
-                    <div class="tournament-card">
-                        <div class="tournament-header">
-                            <h3 class="tournament-title">Diverse draft - gjennom dagen</h3>
-                            <div class="tournament-time">Løpende</div>
+                    <a href="side-events.html" class="event-card side-event">
+                        <div class="event-type">Side Event</div>
+                        <div class="event-title">Modern Grand Challenge</div>
+                        <div class="event-description">
+                            Søndag 9:30. Eksklusiv Modern-turnering begrenset til 64 deltakere. Høyt konkurransenivå og attraktive premier.
                         </div>
-                        <div class="tournament-details">
-                            <div class="detail-item">
-                                <div class="detail-label">Deltagere</div>
-                                <div class="detail-value">Opp til 64</div>
-                            </div>
-                            <div class="detail-item">
-                                <div class="detail-label">Pris</div>
-                                <div class="detail-value">300kr</div>
-                            </div>
-                            <div class="detail-item">
-                                <div class="detail-label">Tid</div>
-                                <div class="detail-value">50min draft, 3 runder</div>
-                            </div>
-                            <div class="detail-item">
-                                <div class="detail-label">Premiering</div>
-                                <div class="detail-value">Pack per win</div>
-                            </div>
+                    </a>
+
+                    <a href="side-events.html" class="event-card side-event">
+                        <div class="event-type">Side Event</div>
+                        <div class="event-title">Chaos Draft</div>
+                        <div class="event-description">
+                            Fredag 17:00 og løpende gjennom hele helgen. Avslappet og morsom draft-turnering. Pack per win premiering.
                         </div>
-                    </div>
+                    </a>
+
+                    <a href="bye-tournament.html" class="event-card qualifier">
+                        <div class="event-type">Kvalifisering</div>
+                        <div class="event-title">Last Chance Bye-Turnering</div>
+                        <div class="event-description">
+                            Fredag 16:30. Siste sjanse til å vinne bye til hovedturneringen! Standard format.
+                        </div>
+                    </a>
+
+                    <a href="praktisk-info.html" class="event-card info">
+                        <div class="event-type">Info</div>
+                        <div class="event-title">Praktisk Informasjon</div>
+                        <div class="event-description">
+                            Reise, overnatting, mat og andre praktiske detaljer for turneringshelgen.
+                        </div>
+                    </a>
+
+                    <a href="vendors.html" class="event-card info">
+                        <div class="event-type">Info</div>
+                        <div class="event-title">Vendors & Handlestedier</div>
+                        <div class="event-description">
+                            Se hvilke vendors som kommer og hvilke kort og produkter som vil være tilgjengelig.
+                        </div>
+                    </a>
                 </div>
-            </section>
-
-            <!-- Søndag 10. august -->
-            <section class="day-section">
-                <div class="day-header">
-                    <h2 class="day-title">Søndag</h2>
-                    <p class="day-date">10. august 2025</p>
-                </div>
-                <div class="events-container">
-                    <div class="tournament-card special-event-tournament">
-                        <div class="tournament-header">
-                            <h3 class="tournament-title">Modern Grand Challenge 64</h3>
-                            <div class="tournament-time">09:30</div>
-                        </div>
-                        <div class="tournament-details">
-                            <div class="detail-item">
-                                <div class="detail-label">Antall deltagere</div>
-                                <div class="detail-value">64</div>
-                            </div>
-                            <div class="detail-item">
-                                <div class="detail-label">Pris</div>
-                                <div class="detail-value">400kr</div>
-                            </div>
-                            <div class="detail-item">
-                                <div class="detail-label">Tid</div>
-                                <div class="detail-value">1 dag, topp 8/4/2 avhengig av tid</div>
-                            </div>
-                            <div class="detail-item">
-                                <div class="detail-label">Premiering</div>
-                                <div class="detail-value">Premier utgår fra antall deltagere</div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="tournament-card main-event-tournament">
-                        <div class="tournament-header">
-                            <h3 class="tournament-title">Main Event - NM i Standard - Topp 8</h3>
-                            <div class="tournament-time">10:00</div>
-                        </div>
-                        <div class="tournament-details">
-                            <div class="detail-item">
-                                <div class="detail-label">Format</div>
-                                <div class="detail-value">Sluttspill for topp 8</div>
-                            </div>
-                            <div class="detail-item">
-                                <div class="detail-label">Premier</div>
-                                <div class="detail-value">Store premier</div>
-                            </div>
-                            <div class="detail-item">
-                                <div class="detail-label">Vinner</div>
-                                <div class="detail-value">1. plass blir Norgesmester 2025</div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="tournament-card">
-                        <div class="tournament-header">
-                            <h3 class="tournament-title">Diverse draft</h3>
-                            <div class="tournament-time">Løpende</div>
-                        </div>
-                        <div class="tournament-details">
-                            <div class="detail-item">
-                                <div class="detail-label">Info</div>
-                                <div class="detail-value">Samme som lørdag</div>
-                            </div>
-                            <div class="detail-item">
-                                <div class="detail-label">Pris</div>
-                                <div class="detail-value">300kr</div>
-                            </div>
-                            <div class="detail-item">
-                                <div class="detail-label">Premiering</div>
-                                <div class="detail-value">Pack per win</div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </section>
-        </div>
+            </div>
+        </section>
     </main>
 
+    <!-- FOOTER -->
     <footer class="footer">
         <div class="container">
             <div class="footer-content">
                 <div class="footer-brand">Norgesmesterskapet i Magic: The Gathering 2025</div>
                 <div>Pilestredet 52 - Studenthuset, OsloMet • 8-10 august 2025</div>
+                <div class="footer-links">
+                    <a href="index.html">Hjem</a>
+                    <a href="side-events.html">Side Events</a>
+                    <a href="praktisk-info.html">Praktisk Info</a>
+                    <a href="vendors.html">Vendors</a>
+                    <a href="https://discord.com/invite/7UtayJsGBB" target="_blank">Discord</a>
+                </div>
             </div>
         </div>
     </footer>
 
-    <script src="script.js"></script>
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+    <script src="js/countdown.js"></script>
+    <script src="js/maps.js"></script>
+    <script src="js/script.js"></script>
 </body>
 </html>
