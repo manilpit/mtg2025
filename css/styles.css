@@ -35,7 +35,7 @@
 /* ===== COUNTDOWN ===== */
 
 .countdown-container {
-    background: linear-gradient(135deg, var(--bg-card) 0%, rgba(100, 181, 246, 0.05) 100%);
+    background: linear-gradient(135deg, var(--bg-card) 0%, rgba(89, 183, 241, 0.05) 100%);
     border: 2px solid var(--primary-color);
     border-radius: 12px;
     padding: 40px;
@@ -58,7 +58,7 @@
 }
 
 .countdown-item {
-    background: rgba(100, 181, 246, 0.1);
+    background: rgba(126, 200, 245, 0.1);
     padding: 20px;
     border-radius: 8px;
     border: 1px solid var(--primary-color);
@@ -90,7 +90,7 @@
 }
 
 .info-card {
-    background: linear-gradient(135deg, var(--bg-card) 0%, rgba(100, 181, 246, 0.05) 100%);
+    background: linear-gradient(135deg, var(--bg-card) 0%, rgba(126, 200, 245, 0.05) 100%);
     border: 1px solid var(--border-color);
     border-radius: 12px;
     padding: 30px;
@@ -266,7 +266,7 @@
 .event-card:hover {
     border-color: var(--primary-color);
     transform: translateY(-8px);
-    box-shadow: 0 15px 40px rgba(100, 181, 246, 0.15);
+    box-shadow: 0 15px 40px rgba(126, 200, 245, 0.15);
 }
 
 .event-card:hover::before {
