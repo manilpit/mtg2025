@@ -1,4 +1,4 @@
-/* program.css - Styling for Fullt Program siden - LYSERE VERSJON */
+/* program.css - Styling for Fullt Program siden - LILLA FOR MAIN EVENTS */
 
 .day-section {
     margin: 50px 0;
@@ -26,7 +26,7 @@
 }
 
 .event-type-badge.main-event {
-    background: #ff8888;
+    background: #bb88ff;
     color: white;
 }
 
@@ -41,12 +41,13 @@
 }
 
 .main-event-card {
-    border-color: #ff8888;
-    background: linear-gradient(135deg, var(--bg-card) 0%, rgba(255, 136, 136, 0.1) 100%);
+    border-color: #bb88ff;
+    background: #3a2a4a;
+    box-shadow: 0 8px 24px rgba(187, 136, 255, 0.3);
 }
 
 .main-event-card .card-title {
-    color: #ffaaaa;
+    color: #dd99ff;
 }
 
 .event-specs {

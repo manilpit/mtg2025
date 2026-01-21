@@ -1,4 +1,4 @@
-/* mer-info.css - Styling for Mer Info siden - LYSERE VERSJON */
+/* mer-info.css - Styling for Mer Info siden - STERKE OPAQUE BOKSER */
 
 .section-subheader {
     font-size: 1.8em;
@@ -10,11 +10,12 @@
 }
 
 .info-section {
-    background: linear-gradient(135deg, var(--bg-card) 0%, var(--bg-card-light) 100%);
-    border: 1px solid var(--border-color);
+    background: var(--box-primary);
+    border: 3px solid var(--primary-color);
     border-radius: 12px;
     padding: 30px;
     margin-bottom: 30px;
+    box-shadow: 0 8px 24px rgba(94, 179, 230, 0.2);
 }
 
 .info-section h4 {
@@ -51,13 +52,15 @@
 }
 
 .highlight-box {
-    background: rgba(94, 179, 230, 0.12);
+    background: var(--box-accent);
     border-left: 4px solid var(--primary-color);
     padding: 15px;
     border-radius: 6px;
     margin: 15px 0;
     color: var(--text-muted);
     font-style: italic;
+    border: 2px solid var(--primary-color);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
 }
 
 /* VENDORS */
@@ -71,31 +74,34 @@
 }
 
 .vendor-card {
-    background: linear-gradient(135deg, var(--bg-card) 0%, var(--bg-card-light) 100%);
-    border: 1px solid var(--border-color);
+    background: var(--box-primary);
+    border: 3px solid var(--primary-color);
     border-radius: 12px;
     padding: 28px;
     text-align: center;
     transition: all 0.3s ease;
+    box-shadow: 0 8px 24px rgba(94, 179, 230, 0.2);
 }
 
 .vendor-card:hover {
     border-color: var(--primary-light);
     transform: translateY(-6px);
-    box-shadow: 0 15px 40px rgba(94, 179, 230, 0.2);
+    box-shadow: 0 15px 40px rgba(94, 179, 230, 0.4);
+    background: var(--box-secondary);
 }
 
 .vendor-logo {
     width: 120px;
     height: 120px;
-    background: rgba(94, 179, 230, 0.12);
+    background: var(--box-accent);
     border-radius: 8px;
     margin: 0 auto 20px;
     display: flex;
     align-items: center;
     justify-content: center;
     font-size: 2.5em;
-    border: 2px dashed var(--primary-color);
+    border: 2px solid var(--primary-color);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
 }
 
 .vendor-name {
@@ -113,10 +119,12 @@
 }
 
 .vendor-products {
-    background: rgba(94, 179, 230, 0.1);
+    background: var(--box-accent);
     border-radius: 6px;
     padding: 15px;
     margin-top: 15px;
+    border: 2px solid var(--primary-color);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
 }
 
 .vendor-products h5 {
@@ -135,8 +143,8 @@
 }
 
 .coming-soon {
-    background: rgba(77, 208, 193, 0.1);
-    border: 2px dashed var(--teal-accent);
+    background: var(--box-teal-dark);
+    border: 3px dashed var(--teal-accent);
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -145,6 +153,7 @@
     border-radius: 12px;
     padding: 30px;
     text-align: center;
+    box-shadow: 0 6px 20px rgba(77, 208, 193, 0.2);
 }
 
 .coming-soon p {
@@ -155,11 +164,12 @@
 }
 
 .vendor-contact {
-    background: rgba(94, 179, 230, 0.12);
-    border: 2px solid var(--primary-color);
+    background: var(--box-primary);
+    border: 3px solid var(--primary-color);
     border-radius: 12px;
     padding: 30px;
     text-align: center;
+    box-shadow: 0 8px 24px rgba(94, 179, 230, 0.2);
 }
 
 .vendor-contact h4 {

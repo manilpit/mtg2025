@@ -1,4 +1,4 @@
-/* shared.css - Felles styling for alle sider - LYSERE VERSJON */
+/* shared.css - Felles styling for alle sider - HOVER HIGHLIGHT UTEN FARGESKIFTE */
 
 :root {
     /* Lysere primærfarger */
@@ -7,18 +7,32 @@
     --primary-light: #7bc4f0;
     --teal-accent: #4dd0c1;
 
-    /* Lysere bakgrunner */
+    /* LYSERE BAKGRUNNER */
     --bg-dark: #1a1f2e;
     --bg-darker: #232d3d;
-    --bg-card: #2d3a4d;
-    --bg-card-light: #3a465d;
+    --bg-card: #2a3d52;
+    --bg-card-light: #354a62;
+
+    /* STERKE OPAQUE BOKSFARGE */
+    --box-primary: #1f3a52;
+    --box-secondary: #2a4a66;
+    --box-accent: #162738;
+    --box-light: #3a5a7a;
+
+    /* Teal/grønn bokser */
+    --box-teal-dark: #1a4a48;
+    --box-teal-light: #2a6a68;
+
+    /* Lilla bokser */
+    --box-purple-dark: #3a2a4a;
+    --box-purple-light: #4a3a5a;
 
     /* Lysere tekst */
     --text-light: #f0f4f9;
     --text-muted: #b8c5d6;
-    --border-color: #445566;
+    --border-color: #5a7090;
 
-    /* Aksentfarger (litt lysere) */
+    /* Aksentfarger */
     --accent-red: #ff8888;
     --accent-green: #7ee8a8;
     --accent-pink: #ff99cc;
@@ -53,12 +67,12 @@ body {
 
 .header {
     padding: 40px 0;
-    background: linear-gradient(135deg, rgba(26, 31, 46, 0.9) 0%, rgba(42, 63, 82, 0.9) 50%, rgba(30, 58, 69, 0.9) 100%);
+    background: linear-gradient(135deg, rgba(26, 31, 46, 0.98) 0%, rgba(42, 63, 82, 0.98) 50%, rgba(30, 58, 69, 0.98) 100%);
     backdrop-filter: blur(10px);
     position: sticky;
     top: 0;
     z-index: 100;
-    border-bottom: 1px solid var(--border-color);
+    border-bottom: 2px solid var(--border-color);
 }
 
 .header-content {
@@ -129,7 +143,7 @@ body {
 
 .nav-menu a:hover,
 .nav-menu button:hover {
-    background: rgba(94, 179, 230, 0.2);
+    background: rgba(94, 179, 230, 0.3);
     border-color: var(--primary-light);
     color: var(--primary-light);
 }
@@ -195,20 +209,22 @@ body {
     margin: 0 auto;
 }
 
-/* ===== CARDS ===== */
+/* ===== CARDS - HIGHLIGHT ON HOVER (UTEN FARGESKIFTE) ===== */
 
 .card {
-    background: linear-gradient(135deg, var(--bg-card) 0%, var(--bg-card-light) 100%);
-    border: 1px solid var(--border-color);
+    background: var(--box-primary);
+    border: 3px solid var(--primary-color);
     border-radius: 12px;
     padding: 30px;
     transition: all 0.3s ease;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.4);
 }
 
 .card:hover {
     border-color: var(--primary-light);
-    transform: translateY(-4px);
-    box-shadow: 0 15px 40px rgba(94, 179, 230, 0.2);
+    transform: translateY(-6px);
+    box-shadow: 0 15px 40px rgba(94, 179, 230, 0.5);
+    filter: brightness(1.15);
 }
 
 .card-title {
@@ -247,7 +263,7 @@ body {
 .btn-primary:hover {
     background: var(--primary-light);
     transform: translateY(-2px);
-    box-shadow: 0 8px 20px rgba(94, 179, 230, 0.5);
+    box-shadow: 0 8px 20px rgba(94, 179, 230, 0.6);
 }
 
 .btn-secondary {
@@ -268,14 +284,14 @@ body {
 
 .btn-discord:hover {
     background: #5b73c4;
-    box-shadow: 0 8px 20px rgba(114, 137, 218, 0.5);
+    box-shadow: 0 8px 20px rgba(114, 137, 218, 0.6);
 }
 
 /* ===== FOOTER ===== */
 
 .footer {
-    background: linear-gradient(135deg, rgba(35, 45, 61, 0.95) 0%, rgba(42, 63, 82, 0.95) 100%);
-    border-top: 1px solid var(--border-color);
+    background: linear-gradient(135deg, rgba(35, 45, 61, 0.98) 0%, rgba(42, 63, 82, 0.98) 100%);
+    border-top: 2px solid var(--border-color);
     padding: 40px 0;
     text-align: center;
     margin-top: 80px;
