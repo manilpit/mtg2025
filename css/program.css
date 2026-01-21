@@ -1,0 +1,90 @@
+/* program.css - Styling for Fullt Program siden - LILLA FOR MAIN EVENTS */
+
+.day-section {
+    margin: 50px 0;
+}
+
+.day-title {
+    font-size: 1.8em;
+    color: var(--text-light);
+    margin-bottom: 30px;
+    padding-left: 15px;
+    border-left: 4px solid var(--primary-color);
+    font-weight: 700;
+}
+
+.event-type-badge {
+    display: inline-block;
+    font-size: 0.75em;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    margin-bottom: 12px;
+    font-weight: 700;
+    padding: 6px 12px;
+    border-radius: 4px;
+    width: fit-content;
+}
+
+.event-type-badge.main-event {
+    background: #bb88ff;
+    color: white;
+}
+
+.event-type-badge.side-event {
+    background: #7ee8a8;
+    color: #0a0e1a;
+}
+
+.event-type-badge.qualifier {
+    background: #ff99cc;
+    color: white;
+}
+
+.main-event-card {
+    border-color: #bb88ff;
+    background: #3a2a4a;
+    box-shadow: 0 8px 24px rgba(187, 136, 255, 0.3);
+}
+
+.main-event-card .card-title {
+    color: #dd99ff;
+}
+
+.event-specs {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 15px;
+    margin-top: 20px;
+    padding-top: 20px;
+    border-top: 1px solid var(--border-color);
+}
+
+.spec {
+    display: flex;
+    flex-direction: column;
+}
+
+.spec-label {
+    color: var(--text-muted);
+    font-size: 0.85em;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 5px;
+}
+
+.spec-value {
+    color: var(--text-light);
+    font-weight: 600;
+    font-size: 1.1em;
+}
+
+@media (max-width: 768px) {
+    .day-title {
+        font-size: 1.5em;
+    }
+
+    .event-specs {
+        grid-template-columns: 1fr;
+    }
+}

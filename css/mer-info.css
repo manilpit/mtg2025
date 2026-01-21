@@ -1,0 +1,194 @@
+/* mer-info.css - Styling for Mer Info siden - STERKE OPAQUE BOKSER */
+
+.section-subheader {
+    font-size: 1.8em;
+    color: var(--text-light);
+    margin-bottom: 30px;
+    padding-left: 15px;
+    border-left: 4px solid var(--primary-color);
+    font-weight: 700;
+}
+
+.info-section {
+    background: var(--box-primary);
+    border: 3px solid var(--primary-color);
+    border-radius: 12px;
+    padding: 30px;
+    margin-bottom: 30px;
+    box-shadow: 0 8px 24px rgba(94, 179, 230, 0.2);
+}
+
+.info-section h4 {
+    font-size: 1.3em;
+    color: var(--text-light);
+    margin-bottom: 15px;
+    font-weight: 600;
+}
+
+.info-section p {
+    color: var(--text-muted);
+    margin-bottom: 12px;
+    line-height: 1.8;
+}
+
+.info-section ul {
+    list-style: none;
+    margin-left: 0;
+    margin-top: 12px;
+}
+
+.info-section li {
+    color: var(--text-muted);
+    margin-bottom: 10px;
+    padding-left: 25px;
+    position: relative;
+}
+
+.info-section li::before {
+    content: "▪";
+    color: var(--primary-color);
+    position: absolute;
+    left: 0;
+}
+
+.highlight-box {
+    background: var(--box-accent);
+    border-left: 4px solid var(--primary-color);
+    padding: 15px;
+    border-radius: 6px;
+    margin: 15px 0;
+    color: var(--text-muted);
+    font-style: italic;
+    border: 2px solid var(--primary-color);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+}
+
+/* VENDORS */
+
+.vendor-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 24px;
+    margin-top: 30px;
+    margin-bottom: 40px;
+}
+
+.vendor-card {
+    background: var(--box-primary);
+    border: 3px solid var(--primary-color);
+    border-radius: 12px;
+    padding: 28px;
+    text-align: center;
+    transition: all 0.3s ease;
+    box-shadow: 0 8px 24px rgba(94, 179, 230, 0.2);
+}
+
+.vendor-card:hover {
+    border-color: var(--primary-light);
+    transform: translateY(-6px);
+    box-shadow: 0 15px 40px rgba(94, 179, 230, 0.4);
+    background: var(--box-secondary);
+}
+
+.vendor-logo {
+    width: 120px;
+    height: 120px;
+    background: var(--box-accent);
+    border-radius: 8px;
+    margin: 0 auto 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2.5em;
+    border: 2px solid var(--primary-color);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+}
+
+.vendor-name {
+    font-size: 1.3em;
+    font-weight: 700;
+    color: var(--text-light);
+    margin-bottom: 10px;
+}
+
+.vendor-description {
+    color: var(--text-muted);
+    font-size: 0.95em;
+    margin-bottom: 15px;
+    line-height: 1.6;
+}
+
+.vendor-products {
+    background: var(--box-accent);
+    border-radius: 6px;
+    padding: 15px;
+    margin-top: 15px;
+    border: 2px solid var(--primary-color);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+}
+
+.vendor-products h5 {
+    color: var(--primary-light);
+    font-size: 0.85em;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 10px;
+    font-weight: 700;
+}
+
+.vendor-products p {
+    color: var(--text-muted);
+    font-size: 0.9em;
+    margin: 0;
+}
+
+.coming-soon {
+    background: var(--box-teal-dark);
+    border: 3px dashed var(--teal-accent);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 200px;
+    border-radius: 12px;
+    padding: 30px;
+    text-align: center;
+    box-shadow: 0 6px 20px rgba(77, 208, 193, 0.2);
+}
+
+.coming-soon p {
+    color: var(--teal-accent);
+    font-size: 1.1em;
+    font-weight: 600;
+    margin: 0;
+}
+
+.vendor-contact {
+    background: var(--box-primary);
+    border: 3px solid var(--primary-color);
+    border-radius: 12px;
+    padding: 30px;
+    text-align: center;
+    box-shadow: 0 8px 24px rgba(94, 179, 230, 0.2);
+}
+
+.vendor-contact h4 {
+    color: var(--text-light);
+    font-size: 1.3em;
+    margin-bottom: 15px;
+}
+
+.vendor-contact p {
+    color: var(--text-muted);
+    margin-bottom: 20px;
+}
+
+@media (max-width: 768px) {
+    .vendor-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .section-subheader {
+        font-size: 1.5em;
+    }
+}
